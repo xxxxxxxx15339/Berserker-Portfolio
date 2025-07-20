@@ -1,82 +1,83 @@
-# HTML
+<div align="center">
 
-A modern HTML project utilizing Tailwind CSS for building responsive web applications with minimal setup.
+![Version: 1.0](https://img.shields.io/badge/version-1.0-blue.svg)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-Enabled-38bdf8?logo=tailwindcss&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## 🚀 Features
+</div>
 
-- **HTML5** - Modern HTML structure with best practices
-- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
-- **Custom Components** - Pre-built component classes for buttons and containers
-- **NPM Scripts** - Easy-to-use commands for development and building
-- **Responsive Design** - Mobile-first approach for all screen sizes
+# Berserker Portfolio
 
-## 📋 Prerequisites
+A visually striking, Berserk-themed developer portfolio. Showcases your skills, projects, and contact information with a dark, modern UI inspired by the legendary manga.
 
-- Node.js (v12.x or higher)
-- npm or yarn
+## Features
 
-## 🛠️ Installation
+- ⚔️ **Berserk-inspired design** with custom backgrounds and fonts
+- 🛠️ **Project showcase** and skill highlights
+- 📬 **Contact section** for easy communication
+- 🌙 **Dark mode** aesthetic
+- ⚡ **Responsive** and mobile-friendly
+- 🎨 Built with **Tailwind CSS** for rapid styling
 
-1. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-```
+---
 
-2. Start the development server:
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Installation
 
-## 📁 Project Structure
+1. **Clone this repository**  
+   ```bash
+   git clone https://github.com/xxxxxxxx15339/berserker_portfolio.git
+   cd berserker_portfolio
+   ```
 
-```
-html_app/
-├── css/
-│   ├── tailwind.css   # Tailwind source file with custom utilities
-│   └── main.css       # Compiled CSS (generated)
-├── pages/             # HTML pages
-├── index.html         # Main entry point
-├── package.json       # Project dependencies and scripts
-└── tailwind.config.js # Tailwind CSS configuration
-```
+2. **Install dependencies**  
+   ```bash
+   npm install
+   ```
 
-## 🎨 Styling
+3. **Run locally**  
+   You can use a simple static server, e.g.:
+   ```bash
+   npx serve .
+   ```
+   Or just open `index.html` directly in your browser.
 
-This project uses Tailwind CSS for styling. Custom utility classes include:
+---
 
+## Usage
 
-## 🧩 Customization
+- Edit your information in the HTML files under the `pages/` directory.
+- Add or update your projects, skills, and contact details as needed.
+- Replace images in `assets/images/` to personalize the visuals.
+- Customize styles in `css/main.css` or extend Tailwind via `tailwind.config.js`.
 
-To customize the Tailwind configuration, edit the `tailwind.config.js` file:
+---
 
+## Customization
 
-## 📦 Build for Production
+- **Change theme colors**: Edit `tailwind.config.js` for your palette.
+- **Update content**: Modify the HTML in `pages/` for each section (About, Projects, Contact, etc.).
+- **Add new sections**: Duplicate and adapt existing sections for more content.
 
-Build the CSS for production:
+---
 
-```bash
-npm run build:css
-# or
-yarn build:css
-```
+## Development
 
-## 📱 Responsive Design
+1. Fork or clone this repository.
+2. Make your changes in a feature branch.
+3. Test locally.
+4. Commit and push your changes.
+5. Open a pull request if you want to contribute.
 
-The app is built with responsive design using Tailwind CSS breakpoints:
+---
 
-- `sm`: 640px and up
-- `md`: 768px and up
-- `lg`: 1024px and up
-- `xl`: 1280px and up
-- `2xl`: 1536px and up
+## License
 
-## 🙏 Acknowledgments
+Distributed under the MIT License. See [LICENSE](./LICENSE) for details.
 
-- Built with [Rocket.new](https://rocket.new)
-- Powered by HTML and Tailwind CSS
+---
 
-Built with ❤️ on Rocket.new
+## Author
+
+**Yasser BAOUZIL** – [GitHub](https://github.com/xxxxxxxx15339)
+
+---
