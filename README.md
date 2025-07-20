@@ -10,6 +10,8 @@
 </pre>
 
 ![Version: 1.0](https://img.shields.io/badge/version-1.0-blue.svg)
+![HTML5](https://img.shields.io/badge/HTML-5-E34F26?logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?logo=javascript&logoColor=black)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-Enabled-38bdf8?logo=tailwindcss&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
