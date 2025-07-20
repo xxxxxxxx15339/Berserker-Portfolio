@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #111111; /* Deep black */
+  --color-secondary: #444444; /* Mid gray */
+  --color-accent: #ffffff; /* White as accent for manga style */
+  
+  /* Background Colors */
+  --color-background: #000000; /* True black */
+  --color-surface: #1a1a1a; /* Dark gray for surfaces */
+  
+  /* Text Colors */
+  --color-text-primary: #ffffff; /* White for main text */
+  --color-text-secondary: #cccccc; /* Light gray for secondary text */
+  
+  /* Status Colors (all grayscale for manga) */
+  --color-success: #bbbbbb; 
+  --color-warning: #888888; 
+  --color-error: #555555; 
+  
+  /* Additional Shades for Better Design Flexibility */
+  --color-primary-50: #fafafa;
+  --color-primary-100: #f5f5f5;
+  --color-primary-200: #e5e5e5;
+  --color-primary-300: #d4d4d4;
+  --color-primary-400: #a3a3a3;
+  --color-primary-500: #737373;
+  --color-primary-600: #525252;
+  --color-primary-700: #404040;
+  --color-primary-800: #262626;
+  --color-primary-900: #171717;
+  --color-primary-950: #0a0a0a;
+
+  /* Accent is just white for manga */
+  --color-accent-50: #ffffff;
+  --color-accent-100: #f5f5f5;
+  --color-accent-200: #e5e5e5;
+  --color-accent-300: #cccccc;
+  --color-accent-400: #b0b0b0;
+  --color-accent-500: #a3a3a3;
+  --color-accent-600: #888888;
+  --color-accent-700: #555555;
+  --color-accent-800: #222222;
+  --color-accent-900: #000000;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  code, pre {
+    font-family: 'Fira Code', monospace;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-black px-6 py-3 rounded-lg font-cinzel font-semibold transition-all duration-300 hover:bg-primary-200 hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface text-text-primary border border-secondary px-6 py-3 rounded-lg font-cinzel font-semibold transition-all duration-300 hover:bg-secondary hover:border-primary-400;
+  }
+  
+  .card {
+    @apply bg-surface border border-secondary rounded-lg p-6 shadow-lg transition-all duration-300 hover:shadow-xl;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-100 to-primary-400 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .shadow-gothic {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .border-subtle {
+    border-color: var(--color-secondary);
+  }
+  
+  .transition-smooth {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}

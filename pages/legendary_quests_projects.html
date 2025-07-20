@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legendary Quests - Berserker Portfolio</title>
+    <meta name="description" content="Epic campaign narratives of conquered development projects, showcasing technical mastery through the lens of legendary quests and victories achieved." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fberserker2862back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background text-text-primary overflow-x-hidden">
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-secondary/30">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Brand of Sacrifice Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 relative">
+                        <svg viewBox="0 0 100 100" class="w-full h-full text-accent hover:text-warning transition-colors duration-300 cursor-pointer">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
+                            <path d="M30 35 L50 20 L70 35 L65 50 L50 65 L35 50 Z" fill="currentColor" opacity="0.8"/>
+                            <circle cx="50" cy="50" r="8" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="font-cinzel text-xl font-bold text-text-primary">Berserker</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="eclipse_gateway_homepage.html" class="font-cinzel text-text-secondary hover:text-text-primary transition-colors duration-300">Gateway</a>
+                    <a href="chronicle_of_the_struggler_about.html" class="font-cinzel text-text-secondary hover:text-text-primary transition-colors duration-300">Chronicle</a>
+                    <a href="arsenal_artifacts_skills.html" class="font-cinzel text-text-secondary hover:text-text-primary transition-colors duration-300">Arsenal</a>
+                    <a href="legendary_quests_projects.html" class="font-cinzel text-accent font-semibold">Quests</a>
+                    <a href="guild_connections_contact.html" class="btn-primary">Contacts</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-text-primary hover:text-accent transition-colors duration-300" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden mt-4 pb-4 border-t border-secondary/30 hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="eclipse_gateway_homepage.html" class="font-cinzel text-text-secondary">Gateway</a>
+                    <a href="chronicle_of_the_struggler_about.html" class="font-cinzel text-text-secondary">Chronicle</a>
+                    <a href="arsenal_artifacts_skills.html" class="font-cinzel text-text-secondary">Arsenal</a>
+                    <a href="legendary_quests_projects.html" class="font-cinzel text-accent font-semibold">Quests</a>
+                    <a href="guild_connections_contact.html" class="btn-primary inline-block text-center mt-2">Contacts</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section for Quests page -->
+    <section class="relative min-h-screen flex flex-col justify-center items-center text-center w-full" style="background-image: url('../assets/images/3.jpg'); background-size: cover; background-position: center;" id="quests-hero">
+      <!-- Change hero overlay opacity to 0.5 for more visible background -->
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div class="relative z-10 flex flex-col items-center justify-center h-full w-full px-4">
+        <h1 class="font-cinzel text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gradient">LEGENDARY QUESTS</h1>
+        <p class="text-lg md:text-xl text-text-secondary mb-8 max-w-2xl mx-auto leading-relaxed">
+          Explore my most significant projects and challenges—each one a quest that forged new skills and insights.
+        </p>
+        <!-- Scroll Indicator (Chronicle style) -->
+        <div id="quests-scroll-indicator" class="animate-bounce mt-2 cursor-pointer">
+          <svg class="w-6 h-6 mx-auto text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+          </svg>
+            </div>
+        </div>
+    </section>
+    <!-- Add id to the next section for scroll target -->
+    <section id="quests-list" class="py-20 px-6 bg-gradient-to-b from-background to-primary-950">
+
+    <!-- Quest Filters -->
+    <section class="py-8 px-6 bg-surface/50 border-y border-secondary/30">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col items-center justify-center gap-6 w-full">
+                <!-- Filter Controls -->
+                <div class="flex flex-wrap items-center justify-center gap-4 w-full">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.207A1 1 0 013 6.5V4z"/>
+                        </svg>
+                        <span class="font-cinzel text-text-primary font-semibold">Filter Quests:</span>
+                    </div>
+                    
+                    <select class="bg-background border border-secondary rounded-lg px-4 py-2 text-text-primary font-cinzel focus:outline-none focus:border-accent transition-colors duration-300" id="technology-filter">
+                        <option value="all">All Technologies</option>
+                        <option value="react">React</option>
+                        <option value="nodejs">Node.js</option>
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="mongodb">MongoDB</option>
+                    </select>
+                    
+                    <select class="bg-background border border-secondary rounded-lg px-4 py-2 text-text-primary font-cinzel focus:outline-none focus:border-accent transition-colors duration-300" id="type-filter">
+                        <option value="all">All Types</option>
+                        <option value="web-app">Web Application</option>
+                        <option value="mobile-app">Mobile App</option>
+                        <option value="api">API/Backend</option>
+                        <option value="ai-ml">AI/ML</option>
+                    </select>
+                    
+                    <select class="bg-background border border-secondary rounded-lg px-4 py-2 text-text-primary font-cinzel focus:outline-none focus:border-accent transition-colors duration-300" id="complexity-filter">
+                        <option value="all">All Complexity</option>
+                        <option value="beginner">Apprentice</option>
+                        <option value="intermediate">Warrior</option>
+                        <option value="advanced">Master</option>
+                        <option value="expert">Legendary</option>
+                    </select>
+                </div>
+
+                <!-- Search and Reset -->
+                <div class="flex flex-wrap items-center justify-center gap-4 w-full">
+                    <div class="relative w-full max-w-xs">
+                        <input type="text" placeholder="Search quests..." class="bg-background border border-secondary rounded-lg pl-10 pr-4 py-2 text-text-primary focus:outline-none focus:border-accent transition-colors duration-300 w-full" id="search-input" />
+                        <svg class="w-4 h-4 text-text-secondary absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <button class="btn-secondary text-sm px-4 py-2" id="reset-filters">
+                        Reset Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quest Gallery -->
+    <section class="py-16 px-6 bg-gradient-to-b from-primary-950 to-background">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="font-cinzel text-3xl md:text-4xl font-bold mb-4 text-gradient">My Project Collection</h2>
+                <p class="text-text-secondary text-lg">A showcase of my learning journey through practical projects</p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Project Card 1: ExaPub -->
+                <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 project-card" data-technology="nuxtjs,javascript,html,css" data-type="web-app" data-complexity="intermediate">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <!-- Image removed -->
+                        <div class="absolute top-3 right-3">
+                            <span class="bg-success/90 text-white px-2 py-1 rounded text-xs font-cinzel">Complete</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="flex space-x-2">
+                                <a href="javascript:void(0)" class="bg-background/80 hover:bg-accent text-text-primary hover:text-white p-1.5 rounded-full transition-all duration-300">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                </a>
+                                <a href="javascript:void(0)" class="bg-background/80 hover:bg-accent text-text-primary hover:text-white p-1.5 rounded-full transition-all duration-300">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-semibold mb-2 text-text-primary">ExaPub</h3>
+                    <p class="text-text-secondary mb-4 text-sm">Built a responsive Nuxt.js site showcasing services like signage, large format printing, and visual identity design.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-success/20 text-success text-xs rounded border border-success/30">Nuxt.js</span>
+                        <span class="px-2 py-1 bg-warning/20 text-warning text-xs rounded border border-warning/30">Responsive Design</span>
+                        <span class="px-2 py-1 bg-primary-400/20 text-primary-400 text-xs rounded border border-primary-400/30">UI/UX</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/xxxxxxxx15339/Web_projects/tree/main/ExaPub" target="_blank" rel="noopener noreferrer" class="text-accent hover:text-warning transition-colors duration-300 font-cinzel font-semibold text-sm cursor-pointer">
+                            View Project →
+                        </a>
+                        <div class="flex items-center space-x-1 text-text-secondary text-xs">
+                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span>Web Dev</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Fake Store -->
+                <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 project-card" data-technology="javascript,html,css,firebase" data-type="web-app" data-complexity="intermediate">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <!-- Image removed -->
+                        <div class="absolute top-3 right-3">
+                            <span class="bg-success/90 text-white px-2 py-1 rounded text-xs font-cinzel">Complete</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="flex space-x-2">
+                                <a href="javascript:void(0)" class="bg-background/80 hover:bg-accent text-text-primary hover:text-white p-1.5 rounded-full transition-all duration-300">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                </a>
+                                <a href="javascript:void(0)" class="bg-background/80 hover:bg-accent text-text-primary hover:text-white p-1.5 rounded-full transition-all duration-300">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-semibold mb-2 text-text-primary">Fake Store</h3>
+                    <p class="text-text-secondary mb-4 text-sm">Developed a simulated e-commerce site using a public API and responsive UI with Firebase integration.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-warning/20 text-warning text-xs rounded border border-warning/30">JavaScript</span>
+                        <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded border border-accent/30">Public API</span>
+                        <span class="px-2 py-1 bg-primary-400/20 text-primary-400 text-xs rounded border border-primary-400/30">Firebase</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/xxxxxxxx15339/Web_projects/tree/main/FakeStore" target="_blank" rel="noopener noreferrer" class="text-accent hover:text-warning transition-colors duration-300 font-cinzel font-semibold text-sm cursor-pointer">
+                            View Project →
+                        </a>
+                        <div class="flex items-center space-x-1 text-text-secondary text-xs">
+                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span>E-commerce</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Municipality Excel Cleaner -->
+                <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 project-card" data-technology="python,pandas,openpyxl" data-type="data-processing" data-complexity="intermediate">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <!-- Image removed -->
+                        <div class="absolute top-3 right-3">
+                            <span class="bg-success/90 text-white px-2 py-1 rounded text-xs font-cinzel">Complete</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="flex space-x-2">
+                                <a href="javascript:void(0)" class="bg-background/80 hover:bg-accent text-text-primary hover:text-white p-1.5 rounded-full transition-all duration-300">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-semibold mb-2 text-text-primary">Municipality-Douar Excel Cleaner & Mapper</h3>
+                    <p class="text-text-secondary mb-4 text-sm">Developed a Python-based data cleaning tool using openpyxl, pandas, difflib and sorting algorithms to process Excel files containing local village data.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-success/20 text-success text-xs rounded border border-success/30">Python</span>
+                        <span class="px-2 py-1 bg-primary-400/20 text-primary-400 text-xs rounded border border-primary-400/30">Pandas</span>
+                        <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded border border-accent/30">OpenPyXL</span>
+                        <span class="px-2 py-1 bg-warning/20 text-warning text-xs rounded border border-warning/30">Data Processing</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/xxxxxxxx15339/DouarMapper" target="_blank" rel="noopener noreferrer" class="text-accent hover:text-warning transition-colors duration-300 font-cinzel font-semibold text-sm cursor-pointer">
+                            View Project →
+                        </a>
+                        <div class="flex items-center space-x-1 text-text-secondary text-xs">
+                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span>Data Tool</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4: IFRC Feedback Form Auto-Filler -->
+                <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 project-card" data-technology="javascript,tampermonkey" data-type="automation" data-complexity="intermediate">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <!-- Image removed -->
+                        <div class="absolute top-3 right-3">
+                            <span class="bg-success/90 text-white px-2 py-1 rounded text-xs font-cinzel">Complete</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="flex space-x-2">
+                                <a href="javascript:void(0)" class="bg-background/80 hover:bg-accent text-text-primary hover:text-white p-1.5 rounded-full transition-all duration-300">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-semibold mb-2 text-text-primary">IFRC Feedback Form Auto-Filler</h3>
+                    <p class="text-text-secondary mb-4 text-sm">Built a Tampermonkey-based JavaScript automation script to simulate randomized feedback entries on IFRC's KoboToolbox form.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-warning/20 text-warning text-xs rounded border border-warning/30">JavaScript</span>
+                        <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded border border-accent/30">Tampermonkey</span>
+                        <span class="px-2 py-1 bg-success/20 text-success text-xs rounded border border-success/30">Automation</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/xxxxxxxx15339/IFRC-FEEDBACK-BOT" target="_blank" rel="noopener noreferrer" class="text-accent hover:text-warning transition-colors duration-300 font-cinzel font-semibold text-sm cursor-pointer">
+                            View Project →
+                        </a>
+                        <div class="flex items-center space-x-1 text-text-secondary text-xs">
+                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span>Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 5: Minimalist Cloud Infrastructure Simulator -->
+                <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 project-card" data-technology="cpp,sqlite,python,pandas,matplotlib" data-type="simulation" data-complexity="advanced">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <!-- Image removed -->
+                        <div class="absolute top-3 right-3">
+                            <span class="bg-success/90 text-white px-2 py-1 rounded text-xs font-cinzel">Complete</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="flex space-x-2">
+                                <a href="javascript:void(0)" class="bg-background/80 hover:bg-accent text-text-primary hover:text-white p-1.5 rounded-full transition-all duration-300">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                </a>
+                                <a href="javascript:void(0)" class="bg-background/80 hover:bg-accent text-text-primary hover:text-white p-1.5 rounded-full transition-all duration-300">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-semibold mb-2 text-text-primary">Minimalist Cloud Infrastructure Simulator</h3>
+                    <p class="text-text-secondary mb-4 text-sm">An object-oriented C++ simulator of a cloud infrastructure platform using modern C++17 features. Models servers, pods, and containers with polymorphism and smart pointers. Exports runtime metrics to SQLite and performs advanced analytics using Python with pandas and matplotlib.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-primary-400/20 text-primary-400 text-xs rounded border border-primary-400/30">C++17</span>
+                        <span class="px-2 py-1 bg-success/20 text-success text-xs rounded border border-success/30">SQLite</span>
+                        <span class="px-2 py-1 bg-warning/20 text-warning text-xs rounded border border-warning/30">Python</span>
+                        <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded border border-accent/30">Pandas</span>
+                        <span class="px-2 py-1 bg-primary-400/20 text-primary-400 text-xs rounded border border-primary-400/30">Matplotlib</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/xxxxxxxx15339/Cloud_Management" target="_blank" rel="noopener noreferrer" class="text-accent hover:text-warning transition-colors duration-300 font-cinzel font-semibold text-sm cursor-pointer">
+                            View Project →
+                        </a>
+                        <div class="flex items-center space-x-1 text-text-secondary text-xs">
+                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span>Simulation</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Learning Note -->
+            <div class="text-center mt-12">
+                <div class="card max-w-2xl mx-auto">
+                    <h3 class="font-cinzel text-xl font-semibold text-text-primary mb-4">Student Developer Journey</h3>
+                    <p class="text-text-secondary">
+                        These projects represent my learning journey as a student developer. Each one taught me new skills and 
+                        helped me grow from a beginner to someone with intermediate knowledge in Python and C++, while continuing 
+                        to learn web technologies and other programming concepts.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-20 px-6 bg-gradient-to-r from-accent/10 via-background to-warning/10">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="font-cinzel text-3xl md:text-4xl font-bold mb-6 text-gradient">Ready to Embark on Your Own Quest?</h2>
+            <p class="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
+                Every legendary quest begins with a single step. Let's forge something extraordinary together and create the next epic campaign.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="mailto:Yasser.BAOUZIL@um6p.ma" class="btn-primary text-lg px-8 py-4 group">Get in Touch</a>
+                <div class="flex flex-col mt-4 space-y-2">
+                    <a href="https://github.com/xxxxxxxx15339" class="text-accent hover:underline" target="_blank">GitHub</a>
+                    <a href="mailto:Yasser.BAOUZIL@um6p.ma" class="text-accent hover:underline">Email</a>
+                    <a href="tel:0613603556" class="text-accent hover:underline">Phone: 0613603556</a>
+                    <a href="https://www.linkedin.com/in/yasser-baouzil-354294343/" class="text-accent hover:underline" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-primary-950 border-t border-secondary/30">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8">
+                            <svg viewBox="0 0 100 100" class="w-full h-full text-accent">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
+                                <path d="M30 35 L50 20 L70 35 L65 50 L50 65 L35 50 Z" fill="currentColor" opacity="0.8"/>
+                                <circle cx="50" cy="50" r="8" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="font-cinzel text-xl font-bold text-text-primary">Berserker Portfolio</span>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        Forged through struggle, refined through practice. Where technical mastery meets relentless determination.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://twitter.com/" class="text-text-secondary hover:text-accent transition-colors duration-300" target="_blank">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/yasser-baouzil-354294343/" class="text-text-secondary hover:text-accent transition-colors duration-300" target="_blank">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/xxxxxxxx15339" class="text-text-secondary hover:text-accent transition-colors duration-300" target="_blank">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-cinzel font-semibold text-text-primary mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="eclipse_gateway_homepage.html" class="text-text-secondary hover:text-accent transition-colors duration-300">Gateway</a></li>
+                        <li><a href="chronicle_of_the_struggler_about.html" class="text-text-secondary hover:text-accent transition-colors duration-300">Chronicle</a></li>
+                        <li><a href="arsenal_artifacts_skills.html" class="text-text-secondary hover:text-accent transition-colors duration-300">Arsenal</a></li>
+                        <li><a href="legendary_quests_projects.html" class="text-text-secondary hover:text-accent transition-colors duration-300">Quests</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-cinzel font-semibold text-text-primary mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="guild_connections_contact.html" class="text-text-secondary hover:text-accent transition-colors duration-300">Contacts</a></li>
+                        <li><a href="https://github.com/xxxxxxxx15339" class="text-text-secondary hover:text-accent transition-colors duration-300" target="_blank">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/yasser-baouzil-354294343/" class="text-text-secondary hover:text-accent transition-colors duration-300" target="_blank">LinkedIn</a></li>
+                        <li><a href="mailto:Yasser.BAOUZIL@um6p.ma" class="text-text-secondary hover:text-accent transition-colors duration-300">Email</a></li>
+                        <li><a href="tel:0613603556" class="text-text-secondary hover:text-accent transition-colors duration-300">Phone: 0613603556</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-secondary/30 mt-8 pt-8 text-center">
+                <p class="text-text-secondary text-sm">
+                    © 2025 Berserker Portfolio. All Rights Reserved. Forged with determination and code.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filter functionality
+        const technologyFilter = document.getElementById('technology-filter');
+        const typeFilter = document.getElementById('type-filter');
+        const complexityFilter = document.getElementById('complexity-filter');
+        const searchInput = document.getElementById('search-input');
+        const resetFiltersBtn = document.getElementById('reset-filters');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        function filterProjects() {
+            const techValue = technologyFilter.value.toLowerCase();
+            const typeValue = typeFilter.value.toLowerCase();
+            const complexityValue = complexityFilter.value.toLowerCase();
+            const searchValue = searchInput.value.toLowerCase();
+
+            projectCards.forEach(card => {
+                const technologies = card.dataset.technology.toLowerCase();
+                const type = card.dataset.type.toLowerCase();
+                const complexity = card.dataset.complexity.toLowerCase();
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+
+                const techMatch = techValue === 'all' || technologies.includes(techValue);
+                const typeMatch = typeValue === 'all' || type === typeValue;
+                const complexityMatch = complexityValue === 'all' || complexity === complexityValue;
+                const searchMatch = searchValue === '' || title.includes(searchValue) || description.includes(searchValue);
+
+                if (techMatch && typeMatch && complexityMatch && searchMatch) {
+                    card.style.display = 'block';
+                    card.classList.add('animate-fade-in');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Add event listeners for filters
+        technologyFilter.addEventListener('change', filterProjects);
+        typeFilter.addEventListener('change', filterProjects);
+        complexityFilter.addEventListener('change', filterProjects);
+        searchInput.addEventListener('input', filterProjects);
+
+        // Reset filters
+        resetFiltersBtn.addEventListener('click', () => {
+            technologyFilter.value = 'all';
+            typeFilter.value = 'all';
+            complexityFilter.value = 'all';
+            searchInput.value = '';
+            filterProjects();
+        });
+
+        // Load more functionality
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        let isLoading = false;
+
+        loadMoreBtn.addEventListener('click', () => {
+            if (isLoading) return;
+            
+            isLoading = true;
+            loadMoreBtn.innerHTML = `
+                <svg class="w-5 h-5 animate-spin inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+                Loading More Quests...
+            `;
+
+            // Simulate loading delay
+            setTimeout(() => {
+                loadMoreBtn.innerHTML = `
+                    All Quests Discovered
+                    <svg class="w-5 h-5 ml-2 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 9l-4-4"/>
+                    </svg>
+                `;
+                loadMoreBtn.disabled = true;
+                loadMoreBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                isLoading = false;
+            }, 2000);
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.card, section').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add hover effects to project cards
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Scroll indicator click for smooth scroll (Chronicle style)
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrollIndicator = document.getElementById('quests-scroll-indicator');
+            if (scrollIndicator) {
+                const nextSection = document.getElementById('quests-list');
+                scrollIndicator.addEventListener('click', function () {
+                    if (nextSection) {
+                        nextSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Berserker</title>
+    <meta name="description" content="Explore the legendary arsenal of technical skills and artifacts forged through countless battles in the realm of code." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fberserker2862back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background text-text-primary overflow-x-hidden">
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-secondary/30">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Brand of Sacrifice Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 relative">
+                        <svg viewBox="0 0 100 100" class="w-full h-full text-accent hover:text-warning transition-colors duration-300 cursor-pointer">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
+                            <path d="M30 35 L50 20 L70 35 L65 50 L50 65 L35 50 Z" fill="currentColor" opacity="0.8"/>
+                            <circle cx="50" cy="50" r="8" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="font-cinzel text-xl font-bold text-text-primary">Berserker</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="eclipse_gateway_homepage.html" class="font-cinzel text-text-secondary hover:text-text-primary transition-colors duration-300">Gateway</a>
+                    <a href="chronicle_of_the_struggler_about.html" class="font-cinzel text-text-secondary hover:text-text-primary transition-colors duration-300">Chronicle</a>
+                    <a href="arsenal_artifacts_skills.html" class="font-cinzel text-accent font-semibold">Arsenal</a>
+                    <a href="legendary_quests_projects.html" class="font-cinzel text-text-secondary hover:text-text-primary transition-colors duration-300">Quests</a>
+                    <a href="guild_connections_contact.html" class="btn-primary">Contacts</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-text-primary hover:text-accent transition-colors duration-300" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden mt-4 pb-4 border-t border-secondary/30 hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="eclipse_gateway_homepage.html" class="font-cinzel text-text-secondary">Gateway</a>
+                    <a href="chronicle_of_the_struggler_about.html" class="font-cinzel text-text-secondary">Chronicle</a>
+                    <a href="arsenal_artifacts_skills.html" class="font-cinzel text-accent font-semibold">Arsenal</a>
+                    <a href="legendary_quests_projects.html" class="font-cinzel text-text-secondary">Quests</a>
+                    <a href="guild_connections_contact.html" class="btn-primary inline-block text-center mt-2">Contacts</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section fills the entire viewport, other content starts below -->
+    <section class="relative min-h-screen flex flex-col justify-center items-center text-center w-full" style="background-image: url('../assets/images/4.jpg'); background-size: cover; background-position: center;" id="arsenal-hero">
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div class="relative z-10 flex flex-col items-center justify-center h-full w-full px-4">
+        <h1 class="font-cinzel text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gradient">ARSENAL &amp; SKILLS</h1>
+        <p class="text-lg md:text-xl text-text-secondary mb-8 max-w-2xl mx-auto leading-relaxed">
+          My growing collection of programming skills and tools. As a student, I'm building my arsenal one skill at a time, with Python and C++ being my strongest weapons so far.
+        </p>
+        <!-- Scroll Indicator (Chronicle style) -->
+        <div id="arsenal-scroll-indicator" class="animate-bounce mt-2 cursor-pointer">
+          <svg class="w-6 h-6 mx-auto text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skill Filter Navigation -->
+    <section id="skills-filter" class="py-8 px-6 bg-gradient-to-r from-primary-950 to-background border-y border-secondary/30">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-wrap justify-center gap-4" id="skill-filters">
+                <button class="filter-btn active" data-category="all">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                    </svg>
+                    All Skills
+                </button>
+                <button class="filter-btn" data-category="languages">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                    </svg>
+                    Languages
+                </button>
+                <button class="filter-btn" data-category="frameworks">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                    </svg>
+                    Frameworks
+                </button>
+                <button class="filter-btn" data-category="tools">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    Tools & Systems
+                </button>
+            </div>
+        </div>
+    </section>
+<script>
+  // Interactive filter for skills
+  document.addEventListener('DOMContentLoaded', function () {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const skillCards = document.querySelectorAll('.skill-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const category = this.getAttribute('data-category');
+        skillCards.forEach(card => {
+          if (category === 'all' || card.classList.contains(category)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+    // Scroll indicator click for smooth scroll (Chronicle style)
+    const scrollIndicator = document.getElementById('arsenal-scroll-indicator');
+    if (scrollIndicator) {
+      scrollIndicator.addEventListener('click', function () {
+        const nextSection = document.getElementById('skills-filter');
+        if (nextSection) {
+          nextSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+  });
+</script>
+<style>
+  #skill-filters {
+    justify-content: center !important;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .filter-btn.active {
+    color: #fff;
+    background: #222;
+    border-radius: 0.5rem;
+    font-weight: bold;
+  }
+  .filter-btn {
+    transition: background 0.2s, color 0.2s;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  .filter-btn:hover {
+    background: #333;
+    color: #fff;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+    <!-- Skills Grid -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="skills-grid">
+                
+                <!-- Strong Skills (Intermediate Level) -->
+                <!-- Python - The Data Serpent -->
+                <div class="skill-card languages" data-category="languages">
+                    <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 relative overflow-hidden border-2 border-success/30">
+                        <div class="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-success" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/>
+                            </svg>
+                        </div>
+                        <div class="mb-4">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-16 h-16 mb-4" />
+                            <h3 class="font-cinzel text-xl font-semibold text-text-primary mb-2">Python - The Data Serpent</h3>
+                            <p class="text-text-secondary text-sm mb-4">My strongest programming language. Used for data processing, automation, and analytics.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-text-secondary text-sm">Skill Level</span>
+                                <span class="text-success font-cinzel font-semibold">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-success to-primary-400 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-text-secondary">
+                                <span>Strong Foundation</span>
+                                <span>3 Projects</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <div class="text-xs text-text-secondary mb-2">Experience with:</div>
+                            <ul class="text-xs text-text-primary space-y-1">
+                                <li>• Pandas & Data Analysis</li>
+                                <li>• Matplotlib Visualization</li>
+                                <li>• OpenPyXL File Processing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C++ - The System Forge -->
+                <div class="skill-card languages" data-category="languages">
+                    <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 relative overflow-hidden border-2 border-primary-400/30">
+                        <div class="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-primary-400" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.393 6c-.167-.29-.398-.543-.652-.69L12.925.22c-.508-.293-1.339-.293-1.847 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .587.415 1.307.923 1.6l8.818 5.09c.508.293 1.339.293 1.847 0l8.818-5.09c.508-.293.923-1.013.923-1.6V6.91c.003-.246-.045-.481-.123-.694-.03-.101-.067-.2-.113-.296zM9.646 10.646a.5.5 0 0 1 .708 0 .5.5 0 0 1 0 .708L8.707 13l1.647 1.646a.5.5 0 0 1-.708.708L7.293 13.707a1 1 0 0 1 0-1.414l2.353-2.353zm4.708 0l2.353 2.353a1 1 0 0 1 0 1.414l-2.353 2.353a.5.5 0 0 1-.708-.708L15.293 13l-1.647-1.646a.5.5 0 0 1 .708-.708z"/>
+                            </svg>
+                        </div>
+                        <div class="mb-4">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-16 h-16 mb-4" />
+                            <h3 class="font-cinzel text-xl font-semibold text-text-primary mb-2">C++ - The System Forge</h3>
+                            <p class="text-text-secondary text-sm mb-4">Object-oriented programming with modern C++17 features and system-level concepts.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-text-secondary text-sm">Skill Level</span>
+                                <span class="text-primary-400 font-cinzel font-semibold">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary-400 to-accent h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-text-secondary">
+                                <span>Strong Foundation</span>
+                                <span>1 Major Project</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <div class="text-xs text-text-secondary mb-2">Experience with:</div>
+                            <ul class="text-xs text-text-primary space-y-1">
+                                <li>• OOP & Design Patterns</li>
+                                <li>• C++17 Modern Features</li>
+                                <li>• Smart Pointers & Memory</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Skills (Beginner Level) -->
+                <!-- JavaScript - The Web Spirit -->
+                <div class="skill-card languages" data-category="languages">
+                    <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 relative overflow-hidden">
+                        <div class="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-warning" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/>
+                            </svg>
+                        </div>
+                        <div class="mb-4">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-16 h-16 mb-4" />
+                            <h3 class="font-cinzel text-xl font-semibold text-text-primary mb-2">JavaScript - The Web Spirit</h3>
+                            <p class="text-text-secondary text-sm mb-4">Learning web interactivity and modern JS features for frontend development.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-text-secondary text-sm">Skill Level</span>
+                                <span class="text-warning font-cinzel font-semibold">Beginner</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-warning to-accent h-2 rounded-full" style="width: 40%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-text-secondary">
+                                <span>Learning</span>
+                                <span>Basic Projects</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <div class="text-xs text-text-secondary mb-2">Currently Learning:</div>
+                            <ul class="text-xs text-text-primary space-y-1">
+                                <li>• DOM Manipulation</li>
+                                <li>• Async Programming</li>
+                                <li>• Modern ES6+ Features</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SQL - The Data Oracle -->
+                <div class="skill-card languages" data-category="languages">
+                    <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 relative overflow-hidden">
+                        <div class="mb-4">
+                            <div class="w-16 h-16 mb-4 bg-accent/20 rounded-lg flex items-center justify-center">
+                                <span class="text-accent font-bold text-2xl">SQL</span>
+                            </div>
+                            <h3 class="font-cinzel text-xl font-semibold text-text-primary mb-2">SQL - The Data Oracle</h3>
+                            <p class="text-text-secondary text-sm mb-4">Database queries and data management fundamentals.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-text-secondary text-sm">Skill Level</span>
+                                <span class="text-accent font-cinzel font-semibold">Beginner</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-accent to-primary-400 h-2 rounded-full" style="width: 35%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-text-secondary">
+                                <span>Basic Queries</span>
+                                <span>Learning</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <div class="text-xs text-text-secondary mb-2">Working with:</div>
+                            <ul class="text-xs text-text-primary space-y-1">
+                                <li>• SELECT, INSERT, UPDATE</li>
+                                <li>• Basic JOINs</li>
+                                <li>• SQLite Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HTML & CSS - The Foundation Stones -->
+                <div class="skill-card languages" data-category="languages">
+                    <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 relative overflow-hidden">
+                        <div class="mb-4">
+                            <div class="flex space-x-2 mb-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="w-8 h-8" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="w-8 h-8" />
+                            </div>
+                            <h3 class="font-cinzel text-xl font-semibold text-text-primary mb-2">HTML & CSS - Foundation Stones</h3>
+                            <p class="text-text-secondary text-sm mb-4">Web markup and styling basics for responsive design.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-text-secondary text-sm">Skill Level</span>
+                                <span class="text-warning font-cinzel font-semibold">Beginner</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-warning to-success h-2 rounded-full" style="width: 50%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-text-secondary">
+                                <span>Basic Layouts</span>
+                                <span>2 Projects</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <div class="text-xs text-text-secondary mb-2">Building with:</div>
+                            <ul class="text-xs text-text-primary space-y-1">
+                                <li>• Responsive Design</li>
+                                <li>• Flexbox & Grid</li>
+                                <li>• Modern CSS Features</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks & Libraries -->
+                <!-- Nuxt.js - The Vue Catalyst -->
+                <div class="skill-card frameworks" data-category="frameworks">
+                    <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 relative overflow-hidden">
+                        <div class="mb-4">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg" alt="Nuxt.js" class="w-16 h-16 mb-4" />
+                            <h3 class="font-cinzel text-xl font-semibold text-text-primary mb-2">Nuxt.js - The Vue Catalyst</h3>
+                            <p class="text-text-secondary text-sm mb-4">Vue.js framework for building responsive web applications.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-text-secondary text-sm">Skill Level</span>
+                                <span class="text-success font-cinzel font-semibold">Beginner</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-success to-primary-400 h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-text-secondary">
+                                <span>Basic Apps</span>
+                                <span>1 Project</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <div class="text-xs text-text-secondary mb-2">Used for:</div>
+                            <ul class="text-xs text-text-primary space-y-1">
+                                <li>• Responsive Websites</li>
+                                <li>• Static Site Generation</li>
+                                <li>• Component Architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node.js - The Server Spirit -->
+                <div class="skill-card frameworks" data-category="frameworks">
+                    <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 relative overflow-hidden">
+                        <div class="mb-4">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-16 h-16 mb-4" />
+                            <h3 class="font-cinzel text-xl font-semibold text-text-primary mb-2">Node.js - The Server Spirit</h3>
+                            <p class="text-text-secondary text-sm mb-4">Basic backend JavaScript runtime for simple applications.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-text-secondary text-sm">Skill Level</span>
+                                <span class="text-accent font-cinzel font-semibold">Basic</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-accent to-warning h-2 rounded-full" style="width: 25%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-text-secondary">
+                                <span>Learning</span>
+                                <span>Simple Scripts</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <div class="text-xs text-text-secondary mb-2">Exploring:</div>
+                            <ul class="text-xs text-text-primary space-y-1">
+                                <li>• Basic Server Setup</li>
+                                <li>• NPM Package Management</li>
+                                <li>• Simple APIs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Systems -->
+                <!-- Linux - The Terminal Realm -->
+                <div class="skill-card tools" data-category="tools">
+                    <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 relative overflow-hidden">
+                        <div class="mb-4">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="w-16 h-16 mb-4" />
+                            <h3 class="font-cinzel text-xl font-semibold text-text-primary mb-2">Linux - The Terminal Realm</h3>
+                            <p class="text-text-secondary text-sm mb-4">User-level Linux skills for development and system navigation.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-text-secondary text-sm">Skill Level</span>
+                                <span class="text-primary-400 font-cinzel font-semibold">User Level</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary-400 to-accent h-2 rounded-full" style="width: 35%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-text-secondary">
+                                <span>Basic Commands</span>
+                                <span>Learning</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <div class="text-xs text-text-secondary mb-2">Can Use:</div>
+                            <ul class="text-xs text-text-primary space-y-1">
+                                <li>• File System Navigation</li>
+                                <li>• Basic Terminal Commands</li>
+                                <li>• Development Environment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Git & GitHub - The Version Scribe -->
+                <div class="skill-card tools" data-category="tools">
+                    <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 relative overflow-hidden">
+                        <div class="mb-4">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-16 h-16 mb-4" />
+                            <h3 class="font-cinzel text-xl font-semibold text-text-primary mb-2">Git & GitHub - Version Scribe</h3>
+                            <p class="text-text-secondary text-sm mb-4">Version control basics for project management and collaboration.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-text-secondary text-sm">Skill Level</span>
+                                <span class="text-warning font-cinzel font-semibold">Basic</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-warning to-accent h-2 rounded-full" style="width: 40%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-text-secondary">
+                                <span>Basic Operations</span>
+                                <span>Learning</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <div class="text-xs text-text-secondary mb-2">Know How To:</div>
+                            <ul class="text-xs text-text-primary space-y-1">
+                                <li>• Basic Git Commands</li>
+                                <li>• GitHub Repository Management</li>
+                                <li>• Commit & Push Changes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Python Libraries -->
+                <div class="skill-card tools" data-category="tools">
+                    <div class="card group hover:shadow-gothic-lg transition-all duration-400 transform hover:-translate-y-2 relative overflow-hidden">
+                        <div class="mb-4">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Libraries" class="w-16 h-16 mb-4" />
+                            <h3 class="font-cinzel text-xl font-semibold text-text-primary mb-2">Python Libraries</h3>
+                            <p class="text-text-secondary text-sm mb-4">Pandas for data processing, Matplotlib for visualization, OpenPyXL for Excel files.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-text-secondary text-sm">Libraries Used</span>
+                                <span class="text-success font-cinzel font-semibold">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-success to-primary-400 h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-text-secondary">
+                                <span>Pandas, Matplotlib, OpenPyXL</span>
+                                <span>Projects</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <div class="text-xs text-text-secondary mb-2">Libraries Used:</div>
+                            <ul class="text-xs text-text-primary space-y-1">
+                                <li>• Pandas for Data Processing</li>
+                                <li>• Matplotlib for Visualization</li>
+                                <li>• OpenPyXL for Excel Files</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Progress Section -->
+    <section class="py-20 px-6 bg-gradient-to-b from-background to-primary-950">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="font-cinzel text-3xl md:text-4xl font-bold mb-4 text-gradient">Learning Journey</h2>
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto">
+                    My skill development over time, showing growth from beginner to current intermediate level in key areas.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Strong Skills -->
+                <div class="card">
+                    <h3 class="font-cinzel text-xl font-semibold text-text-primary mb-6 text-center">Strong Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-text-secondary">Python</span>
+                                <span class="text-success text-sm">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-success h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-text-secondary">C/C++</span>
+                                <span class="text-primary-400 text-sm">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-primary-400 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-text-secondary">Data Structures & Algorithms</span>
+                                <span class="text-warning text-sm">Learning</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-warning h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Skills -->
+                <div class="card">
+                    <h3 class="font-cinzel text-xl font-semibold text-text-primary mb-6 text-center">Developing Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-text-secondary">JavaScript</span>
+                                <span class="text-accent text-sm">Beginner</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-text-secondary">Web Development</span>
+                                <span class="text-warning text-sm">Beginner</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-warning h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-text-secondary">AI Engineering Basics</span>
+                                <span class="text-success text-sm">Learning</span>
+                            </div>
+                            <div class="w-full bg-primary-800 rounded-full h-2">
+                                <div class="bg-success h-2 rounded-full" style="width: 25%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-6 bg-gradient-to-r from-accent/10 via-background to-warning/10">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="font-cinzel text-3xl md:text-4xl font-bold mb-6 text-gradient">Ready to Forge Something Legendary?</h2>
+            <p class="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
+                These weapons and artifacts are ready to be wielded in your next great quest. Let's build something extraordinary together.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="legendary_quests_projects.html" class="btn-primary text-lg px-8 py-4 group">
+                    View Battle Records
+                    <svg class="w-5 h-5 ml-2 inline-block group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
+                </a>
+                <a href="guild_connections_contact.html" class="btn-secondary text-lg px-8 py-4 group">
+                    Form an Alliance
+                    <svg class="w-5 h-5 ml-2 inline-block group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-primary-950 border-t border-secondary/30">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8">
+                            <svg viewBox="0 0 100 100" class="w-full h-full text-accent">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
+                                <path d="M30 35 L50 20 L70 35 L65 50 L50 65 L35 50 Z" fill="currentColor" opacity="0.8"/>
+                                <circle cx="50" cy="50" r="8" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="font-cinzel text-xl font-bold text-text-primary">Berserker Portfolio</span>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        Forged through struggle, refined through practice. Where technical mastery meets relentless determination.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-text-secondary hover:text-accent transition-colors duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-text-secondary hover:text-accent transition-colors duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.083 2.381.083 3.176 0 0 1.008 2.323 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.083 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-text-secondary hover:text-accent transition-colors duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M10 12a2 2 0 11-4 0 2 2 0 014 0zm0 0a2 2 0 11-4 0 2 2 0 014 0zm0 0a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
